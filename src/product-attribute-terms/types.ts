@@ -1,88 +1,88 @@
-import {ID, Links} from '../types';
+import { ID, Links } from '../types';
 
 export declare type ReadOnlyProductAttributeTermDetails = {
-    id: ID;
-    count: number;
-    _links: Links;
+  id: ID;
+  count: number;
+  _links: Links;
 };
 
 export declare type MutableProductAttributeTermDetails = {
-    name: string;
-    slug: string;
-    description: string;
-    menu_order: number;
+  name: string;
+  slug: string;
+  description: string;
+  menu_order: number;
 };
 
 export declare type ProductAttributeTerm = ReadOnlyProductAttributeTermDetails &
-    MutableProductAttributeTermDetails;
+  MutableProductAttributeTermDetails;
 
 export declare type ProductAttributeTermData = Partial<
-    MutableProductAttributeTermDetails
+  MutableProductAttributeTermDetails
 >;
 
 export declare type ProductAttributeTermListParams = {
-    context?: 'view' | 'edit';
-    page?: number;
-    per_page?: number;
-    search?: string;
-    exclude?: number[];
-    include?: number[];
-    order?: 'asc' | 'desc';
-    orderby?:
-        | 'id'
-        | 'include'
-        | 'name'
-        | 'slug'
-        | 'term_group'
-        | 'description'
-        | 'count';
-    hide_empty?: boolean;
-    parent?: number;
-    product?: number;
-    slug?: string;
+  context?: 'view' | 'edit';
+  page?: number;
+  per_page?: number;
+  search?: string;
+  exclude?: number[];
+  include?: number[];
+  order?: 'asc' | 'desc';
+  orderby?:
+    | 'id'
+    | 'include'
+    | 'name'
+    | 'slug'
+    | 'term_group'
+    | 'description'
+    | 'count';
+  hide_empty?: boolean;
+  parent?: number;
+  product?: number;
+  slug?: string;
 };
 
 export declare type CreateProductAttributeTermRequestType = {
-    attribute_id: ID;
-    data: ProductAttributeTermData;
+  attribute_id: ID;
+  data: ProductAttributeTermData;
 };
 
 export declare type ProductAttributeTermByIdRequestType = {
-    attribute_id: ID;
-    term_id: ID;
+  attribute_id: ID;
+  term_id: ID;
 };
 
 export declare type ListProductAttributeTermRequestType = {
-    attribute_id: ID;
-    params: ProductAttributeTermListParams;
+  attribute_id: ID;
+  params?: ProductAttributeTermListParams;
 };
 
 export declare type UpdateProductAttributeTermRequestType = {
-    attribute_id: ID;
-    term_id: ID;
-    data: ProductAttributeTermData;
+  attribute_id: ID;
+  term_id: ID;
+  data: ProductAttributeTermData;
 };
 
 export declare type DeleteProductAttributeTermRequestType = {
-    attribute_id: ID;
-    term_id: ID;
-    data: {
-        force?: boolean;
-    };
+  attribute_id: ID;
+  term_id: ID;
+  data: {
+    force?: boolean;
+  };
 };
 
 export declare type ProductAttributeTermBatchUpdateDataType = ProductAttributeTermData & {
-    id: ID;
+  id: ID;
 };
 
 export declare type ProductAttributeTermBatchUpdateRequestType = {
-    create?: CreateProductAttributeTermRequestType[];
-    update?: ProductAttributeTermBatchUpdateDataType[];
-    delete?: ID[];
+  create?: CreateProductAttributeTermRequestType[];
+  update?: ProductAttributeTermBatchUpdateDataType[];
+  delete?: ID[];
 };
 
 export declare type ProductAttributeTermBatchUpdateResponseType = {
-    create?: ProductAttributeTerm[];
-    update?: ProductAttributeTerm[];
-    delete?: ProductAttributeTerm[];
+  create?: ProductAttributeTerm[];
+  update?: ProductAttributeTerm[];
+  delete?: ProductAttributeTerm[];
 };

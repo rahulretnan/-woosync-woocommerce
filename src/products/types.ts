@@ -201,9 +201,8 @@ export declare type ListProductRequestParams = {
     stock_status?: StockStatus;
 };
 
-export declare type ListProductRequestType = {
-    params: ListProductRequestParams;
-};
+export declare type ListProductRequestType = ListProductRequestParams;
+
 
 export declare type UpdateProductRequestType = {
     id: ID;

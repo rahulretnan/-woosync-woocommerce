@@ -14,4 +14,4 @@ export * from './shipping-zone-methods/types';
 export * from './system-status/types';
 export * from './taxes/types';
 export * from './tax-classes/types';
-export * from './woocommerce';
+export {default as WoocommerceClient} from './woocommerce';
